@@ -1,0 +1,14 @@
+# ---------- Backend (.NET) ----------
+SisTalleresApi/bin/
+SisTalleresApi/obj/
+SisTalleresApi/appsettings.Development.json
+
+# ---------- Frontend (Angular) ----------
+SisTalleresFront/node_modules/
+SisTalleresFront/dist/
+SisTalleresFront/.angular/
+
+# ---------- General ----------
+*.user
+.vs/
+.vscode/

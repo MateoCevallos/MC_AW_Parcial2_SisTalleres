@@ -1,0 +1,62 @@
+<div class="contenedor">
+  <h2>Gestión de Talleres</h2>
+
+  <div class="mensaje-error" *ngIf="mensajeError">
+    {{ mensajeError }}
+  </div>
+
+  <form (ngSubmit)="guardar()" class="formulario">
+    <h3>{{ editando ? 'Editar Taller' : 'Nuevo Taller' }}</h3>
+
+    <div class="campo">
+      <label>Nombre</label>
+      <input type="text" [(ngModel)]="tallerActual.nombre" name="nombre" required />
+    </div>
+
+    <div class="campo">
+      <label>Descripción</label>
+      <textarea [(ngModel)]="tallerActual.descripcion" name="descripcion"></textarea>
+    </div>
+
+    <div class="campo">
+      <label>Fecha</label>
+      <input type="date" [(ngModel)]="tallerActual.fecha" name="fecha" required />
+    </div>
+
+    <div class="campo">
+      <label>Ubicación</label>
+      <input type="text" [(ngModel)]="tallerActual.ubicacion" name="ubicacion" required />
+    </div>
+
+    <div class="acciones-formulario">
+      <button type="submit">{{ editando ? 'Actualizar' : 'Crear' }}</button>
+      <button type="button" *ngIf="editando" (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+
+  <table class="tabla-talleres">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Fecha</th>
+        <th>Ubicación</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let taller of talleres">
+        <td>{{ taller.tallerId }}</td>
+        <td>{{ taller.nombre }}</td>
+        <td>{{ taller.descripcion }}</td>
+        <td>{{ taller.fecha }}</td>
+        <td>{{ taller.ubicacion }}</td>
+        <td>
+          <button (click)="editar(taller)">Editar</button>
+          <button (click)="eliminar(taller.tallerId)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

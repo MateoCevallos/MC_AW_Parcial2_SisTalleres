@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --amarillo-claro: #fff8e1;
+  --amarillo: #ffca28;
+  --amarillo-fuerte: #ffa000;
+  --naranja: #fb8c00;
+  --naranja-fuerte: #ef6c00;
+  --texto-oscuro: #4e342e;
+  --gris-suave: #f5f0e8;
+  --blanco: #ffffff;
+  --rojo-suave: #e57373;
+  --rojo-fuerte: #c62828;
+  --sombra: 0 2px 8px rgba(239, 108, 0, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--gris-suave);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--texto-oscuro);
+}

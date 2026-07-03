@@ -1,0 +1,140 @@
+.contenedor {
+  max-width: 950px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.contenedor h2 {
+  color: var(--naranja-fuerte);
+  border-bottom: 3px solid var(--amarillo);
+  padding-bottom: 0.5rem;
+}
+
+.mensaje-error {
+  background: #fdecea;
+  color: var(--rojo-fuerte);
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--rojo-fuerte);
+}
+
+.formulario {
+  background: var(--blanco);
+  padding: 1.5rem;
+  border-radius: 14px;
+  margin-bottom: 2rem;
+  box-shadow: var(--sombra);
+  border-left: 5px solid var(--amarillo-fuerte);
+}
+
+.formulario h3 {
+  margin-top: 0;
+  color: var(--naranja-fuerte);
+}
+
+.campo {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--texto-oscuro);
+  font-size: 0.9rem;
+}
+
+.campo input,
+.campo textarea {
+  padding: 0.65rem 0.8rem;
+  border: 2px solid #f0e0c0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--amarillo-fuerte);
+}
+
+.acciones-formulario button {
+  margin-right: 0.6rem;
+  padding: 0.65rem 1.4rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.acciones-formulario button[type="submit"] {
+  background: linear-gradient(135deg, var(--naranja), var(--amarillo-fuerte));
+  color: white;
+}
+
+.acciones-formulario button[type="button"] {
+  background: #eee;
+  color: var(--texto-oscuro);
+}
+
+.acciones-formulario button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.tabla-talleres {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--blanco);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.tabla-talleres th,
+.tabla-talleres td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+}
+
+.tabla-talleres th {
+  background: linear-gradient(135deg, var(--naranja-fuerte), var(--amarillo-fuerte));
+  color: white;
+  font-weight: 600;
+}
+
+.tabla-talleres tbody tr {
+  border-bottom: 1px solid #f5e9d0;
+  transition: background 0.15s ease;
+}
+
+.tabla-talleres tbody tr:hover {
+  background: var(--amarillo-claro);
+}
+
+.tabla-talleres button {
+  margin-right: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--amarillo);
+  color: var(--texto-oscuro);
+  transition: transform 0.15s ease;
+}
+
+.tabla-talleres button:hover {
+  transform: translateY(-1px);
+}
+
+.tabla-talleres button:last-child {
+  background: var(--rojo-suave);
+  color: white;
+}

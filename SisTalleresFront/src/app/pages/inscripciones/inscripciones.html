@@ -1,0 +1,69 @@
+<div class="contenedor">
+  <h2>Gestión de Inscripciones</h2>
+
+  <div class="mensaje-error" *ngIf="mensajeError">{{ mensajeError }}</div>
+  <div class="mensaje-exito" *ngIf="mensajeExito">{{ mensajeExito }}</div>
+
+  <form (ngSubmit)="inscribir()" class="formulario">
+    <h3>Nueva Inscripción</h3>
+
+    <div class="campo">
+      <label>Taller</label>
+      <select [(ngModel)]="nuevaInscripcion.tallerId" name="tallerId" required>
+        <option [value]="0" disabled>Selecciona un taller</option>
+        <option *ngFor="let taller of talleres" [value]="taller.tallerId">
+          {{ taller.nombre }} — {{ taller.fecha }}
+        </option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label>Participante</label>
+      <select [(ngModel)]="nuevaInscripcion.participanteId" name="participanteId" required>
+        <option [value]="0" disabled>Selecciona un participante</option>
+        <option *ngFor="let participante of participantes" [value]="participante.participanteId">
+          {{ participante.nombre }} {{ participante.apellido }}
+        </option>
+      </select>
+    </div>
+
+    <div class="acciones-formulario">
+      <button type="submit">Inscribir</button>
+    </div>
+  </form>
+
+  <table class="tabla-inscripciones">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Taller</th>
+        <th>Participante</th>
+        <th>Email</th>
+        <th>Fecha Inscripción</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let inscripcion of inscripciones">
+        <td>{{ inscripcion.inscripcionId }}</td>
+        <td>{{ inscripcion.tallerNombre }}</td>
+        <td>{{ inscripcion.participanteNombre }} {{ inscripcion.participanteApellido }}</td>
+        <td>{{ inscripcion.participanteEmail }}</td>
+        <td>{{ inscripcion.fechaInscripcion }}</td>
+        <td>
+          <span class="badge" [class.confirmada]="inscripcion.estado === 'confirmada'"
+                [class.cancelada]="inscripcion.estado === 'cancelada'">
+            {{ inscripcion.estado }}
+          </span>
+        </td>
+        <td>
+          <button (click)="cambiarEstado(inscripcion)">
+            {{ inscripcion.estado === 'confirmada' ? 'Cancelar' : 'Confirmar' }}
+          </button>
+          <button (click)="eliminar(inscripcion.inscripcionId)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

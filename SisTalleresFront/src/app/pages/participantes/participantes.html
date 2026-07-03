@@ -1,0 +1,62 @@
+<div class="contenedor">
+  <h2>Gestión de Participantes</h2>
+
+  <div class="mensaje-error" *ngIf="mensajeError">
+    {{ mensajeError }}
+  </div>
+
+  <form (ngSubmit)="guardar()" class="formulario">
+    <h3>{{ editando ? 'Editar Participante' : 'Nuevo Participante' }}</h3>
+
+    <div class="campo">
+      <label>Nombre</label>
+      <input type="text" [(ngModel)]="participanteActual.nombre" name="nombre" required />
+    </div>
+
+    <div class="campo">
+      <label>Apellido</label>
+      <input type="text" [(ngModel)]="participanteActual.apellido" name="apellido" required />
+    </div>
+
+    <div class="campo">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="participanteActual.email" name="email" required />
+    </div>
+
+    <div class="campo">
+      <label>Teléfono</label>
+      <input type="text" [(ngModel)]="participanteActual.telefono" name="telefono" />
+    </div>
+
+    <div class="acciones-formulario">
+      <button type="submit">{{ editando ? 'Actualizar' : 'Crear' }}</button>
+      <button type="button" *ngIf="editando" (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+
+  <table class="tabla-participantes">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let participante of participantes">
+        <td>{{ participante.participanteId }}</td>
+        <td>{{ participante.nombre }}</td>
+        <td>{{ participante.apellido }}</td>
+        <td>{{ participante.email }}</td>
+        <td>{{ participante.telefono }}</td>
+        <td>
+          <button (click)="editar(participante)">Editar</button>
+          <button (click)="eliminar(participante.participanteId)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

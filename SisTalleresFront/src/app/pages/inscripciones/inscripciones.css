@@ -1,0 +1,156 @@
+.contenedor {
+  max-width: 1050px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.contenedor h2 {
+  color: var(--naranja-fuerte);
+  border-bottom: 3px solid var(--amarillo);
+  padding-bottom: 0.5rem;
+}
+
+.mensaje-error {
+  background: #fdecea;
+  color: var(--rojo-fuerte);
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--rojo-fuerte);
+}
+
+.mensaje-exito {
+  background: #fff3e0;
+  color: var(--naranja-fuerte);
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--amarillo-fuerte);
+}
+
+.formulario {
+  background: var(--blanco);
+  padding: 1.5rem;
+  border-radius: 14px;
+  margin-bottom: 2rem;
+  box-shadow: var(--sombra);
+  border-left: 5px solid var(--amarillo-fuerte);
+}
+
+.formulario h3 {
+  margin-top: 0;
+  color: var(--naranja-fuerte);
+}
+
+.campo {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.campo select {
+  padding: 0.65rem 0.8rem;
+  border: 2px solid #f0e0c0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background: white;
+}
+
+.campo select:focus {
+  outline: none;
+  border-color: var(--amarillo-fuerte);
+}
+
+.acciones-formulario button {
+  padding: 0.65rem 1.6rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--naranja), var(--amarillo-fuerte));
+  color: white;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.acciones-formulario button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.tabla-inscripciones {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--blanco);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.tabla-inscripciones th,
+.tabla-inscripciones td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+}
+
+.tabla-inscripciones th {
+  background: linear-gradient(135deg, var(--naranja-fuerte), var(--amarillo-fuerte));
+  color: white;
+  font-weight: 600;
+}
+
+.tabla-inscripciones tbody tr {
+  border-bottom: 1px solid #f5e9d0;
+  transition: background 0.15s ease;
+}
+
+.tabla-inscripciones tbody tr:hover {
+  background: var(--amarillo-claro);
+}
+
+.tabla-inscripciones button {
+  margin-right: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--amarillo);
+  color: var(--texto-oscuro);
+  transition: transform 0.15s ease;
+}
+
+.tabla-inscripciones button:hover {
+  transform: translateY(-1px);
+}
+
+.tabla-inscripciones button:last-child {
+  background: var(--rojo-suave);
+  color: white;
+}
+
+.badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.badge.confirmada {
+  background: #fff3e0;
+  color: var(--naranja-fuerte);
+  border: 1px solid var(--amarillo-fuerte);
+}
+
+.badge.cancelada {
+  background: #fdecea;
+  color: var(--rojo-fuerte);
+  border: 1px solid var(--rojo-suave);
+}
